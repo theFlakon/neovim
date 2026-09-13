@@ -1,6 +1,6 @@
 -- lua/lazy.lua
 
--- Bootstrap: если lazy.nvim ещё не скачан — клонируем его
+-- Bootstrap: start or install Lazy vim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -15,20 +15,24 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Настройка lazy.nvim
+-- Prerequisites before plugins load
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- Lazy vim setup
 require("lazy").setup({
   spec = {
-    -- автоматически подхватит все файлы в lua/plugins/
+    -- Automatically looks for files in plugins directory
     { import = "plugins" },
   },
   install = {
-    colorscheme = { "habamax" }, -- дефолтная цветосхема на время установки
+    colorscheme = { "habamax" }, -- Default colorscheme during install
   },
   checker = {
-    enabled = true, -- фоновая проверка обновлений
+    enabled = true, -- Background update check
     notify = false,
   },
   change_detection = {
-    notify = false, -- не спамить уведомлением при изменении конфига
+    notify = false, -- Do not spam about config update
   },
 })
