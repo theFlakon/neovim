@@ -1,7 +1,27 @@
 return {
-  "folke/tokyonight.nvim",
-  priority = 1000,        -- It should be loaded before other plugins
-  config = function()
-    vim.cmd.colorscheme("tokyonight")
-  end,
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+    },
+
+    {
+        "ellisonleao/gruvbox.nvim",
+        priority = 1000,
+        config = true,
+    },
+
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+    },
+
+    {
+        "rebelot/kanagawa.nvim",
+    },
+
+    {
+        "rose-pine/neovim",
+        name = "rose-pine",
+    },
 }

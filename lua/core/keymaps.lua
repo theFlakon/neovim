@@ -36,8 +36,3 @@ vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'LSP: Rename symb
 
 -- Go to the function's definition
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
-
--- Several terminals (using toggle term plugin)
-vim.keymap.set("n", "<leader>t1", "<cmd>ToggleTerm 1<cr>")
-vim.keymap.set("n", "<leader>t2", "<cmd>ToggleTerm 2<cr>")
-vim.keymap.set("n", "<leader>t3", "<cmd>ToggleTerm 3<cr>")
