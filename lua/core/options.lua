@@ -18,7 +18,7 @@ vim.opt.wrapscan = true
 vim.opt.autoread = true
 
 vim.opt.cursorline = true
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "88"
 
 vim.opt.termguicolors = true
 vim.opt.showmode = false
